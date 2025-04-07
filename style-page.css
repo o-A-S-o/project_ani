@@ -1,0 +1,159 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* Шапка */
+header {
+    background: linear-gradient(90deg, #0d47a1, #1976d2);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Меню */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #fbc8bb;
+}
+
+/* Контент на странице аниме */
+.anime-detail {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: flex-start;  /* Сдвигаем блок к началу */
+    gap: 30px;
+    align-items: flex-start;
+    border: 4px solid #1976d2;  /* Окрашенная рамка вокруг */
+    border-radius: 15px;
+    background-color: #b0d6f9;  /* Фон внутри рамки (светлый голубой) */
+    position: relative;
+}
+
+/* Стиль для картинки */
+.anime-image img {
+    width: 250px;  /* Увеличиваем картинку */
+    height: auto;
+    border-radius: 10px;
+    position: absolute;  /* Размещаем в углу */
+    top: 10px;  /* Немного отступаем от верхнего края */
+    left: 10px;  /* Немного отступаем от левого края */
+}
+
+/* Описание аниме */
+.anime-description {
+    text-align: justify;  /* Выравниваем текст по ширине */
+    margin-left: 270px;  /* Отступим текст от картинки */
+    width: calc(100% - 270px);  /* Чтобы текст занимал оставшуюся часть */
+    overflow: hidden;  /* Убираем пустое пространство */
+}
+
+/* Заголовок описания */
+.anime-description h2 {
+    color: #1565c0;
+    margin-bottom: 15px;
+}
+
+/* Описание текста */
+.anime-description p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Блок для будущих функций (видео и кнопки) */
+.future-features {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.video-placeholder {
+    width: 80%;
+    height: 300px;
+    background-color: #b0bec5;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.buttons-placeholder {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.buttons-placeholder button {
+    padding: 10px 20px;
+    background-color: #0d47a1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons-placeholder button:hover {
+    background-color: #1976d2;
+}
+
+/* Подвал */
+footer {
+    background: linear-gradient(90deg, #0d47a1, #1976d2);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* Адаптивный дизайн */
+
+/* Для мобильных устройств (до 768px) */
+@media (max-width: 768px) {
+    .anime-detail {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .anime-description {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .anime-image img {
+        position: static;  /* Убираем абсолютное позиционирование на мобильных */
+        width: 100%;  /* Картинка будет по ширине блока */
+        margin-bottom: 20px;
+    }
+
+    .video-placeholder {
+        width: 95%;
+        height: 200px;
+    }
+
+    .buttons-placeholder {
+        flex-direction: column;
+    }
+}
