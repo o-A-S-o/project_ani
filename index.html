@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Галерея аниме</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header>
@@ -18,27 +19,27 @@
 
     <main>
         <section class="content">
-            <article class="card">
+            <article class="card" data-link="anime1.html">
                 <img src="photo/image1.jpg" alt="Название 1">
                 <h2>Восхождение в тени! / Kage no Jitsuryokusha ni Naritakute!</h2>
             </article>
-            <article class="card">
+            <article class="card" data-link="anime2.html">
                 <img src="photo/image2.jpg" alt="Название 2">
                 <h2>Виви: Песнь флюоритового глаза / Vivy: Fluorite Eye's Song</h2>
             </article>
-            <article class="card">
+            <article class="card" data-link="anime3.html">
                 <img src="photo/image3.jpg" alt="Название 3">
                 <h2>Рубеж Шангри-Ла: Любитель игрошлака бросает вызов топ-игре / Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su</h2>
             </article>
-            <article class="card">
+            <article class="card" data-link="anime4.html">
                 <img src="photo/image4.jpg" alt="Название 4">
                 <h2>Медуза не умеет плавать в ночи / Yoru no Kurage wa Oyogena</h2>
             </article>
-            <article class="card">
+            <article class="card" data-link="anime5.html">
                 <img src="photo/image5.jpg" alt="Название 3">
                 <h2>Аркнайтс: Прелюдия к рассвету / Arknights: Reimei Zensou</h2>
             </article>
-            <article class="card">
+            <article class="card" data-link="anime6.html">
                 <img src="photo/image6.jpg" alt="Название 4">
                 <h2>Добро пожаловать в ад, Ирума! / Mairimashita! Iruma-kun 3rd Season</h2>
             </article>
@@ -48,5 +49,26 @@
     <footer>
         <p>© 2025 Все права защищены</p>
     </footer>
+
+    <script>
+        // Добавление анимации при наведении и функционала перехода по карточкам
+        $(document).ready(function() {
+            $(".card").hover(function() {
+                $(this).css({
+                    "transform": "translateY(-5px)",
+                    "box-shadow": "0 6px 20px rgba(0, 0, 0, 0.3)"
+                });
+            }, function() {
+                $(this).css({
+                    "transform": "translateY(0)",
+                    "box-shadow": "0 4px 15px rgba(0, 0, 0, 0.2)"
+                });
+            });
+
+            $(".card").click(function() {
+                window.location.href = $(this).data("link");
+            });
+        });
+    </script>
 </body>
 </html>
